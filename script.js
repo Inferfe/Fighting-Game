@@ -25,16 +25,11 @@ class Player{
     strike(player){
         const random = Math.floor(Math.random() * 11);
         if(player.health-random<=0){
-            player.health=0
-           
-        }else{
-             player.health -= random;
-        }
-       
-       
-        return player.health
-
-
+            player.health=0} else{
+                             player.health -= random;
+                               }
+        
+      return player.health
     }
     heal(){
         const random=Math.floor(Math.random()*11)
@@ -67,19 +62,14 @@ const healPlayer=(player,text)=>{
 }
 
 const strikePlayer=(player0,player1,text)=>{
-
-     const strike = player0.strike(player1);
-
-     if (strike === 0) {
+  const strike = player0.strike(player1);
+  if (strike === 0) {
        text.textContent = strike;
        result.textContent = `${player0.name} WON!`;
        victorySound.play()
      } else {
        text.textContent = strike;
      }
-
-
-
 }
 
 const resetHealths=()=>{
@@ -94,14 +84,11 @@ document.addEventListener('keydown',function(e){
     if(e.key==='a'){
        if (player1.health > 0)  healPlayer(player1, player1HealthText) 
         p1HealSound.play();
-
-       
 } 
   
  else if(e.key==='q'){
  if (player1.health > 0) strikePlayer(player1, player2, player2HealthText);
  p1attack.play()
-
 }
 else if(e.key==='l'){
    if (player2.health > 0) healPlayer(player2, player2HealthText);
@@ -117,12 +104,10 @@ else if(e.key==='p'){
 )
 // implementing random game simulation
 simulate.addEventListener('click',function(){
-    while( player1.health>0&& player2.health>0){
+   while( player1.health>0&& player2.health>0){
         strikePlayer(player1, player2, player2HealthText);
            strikePlayer(player2, player1, player1HealthText);
-        
-
-    }
+       }
 })
 
 // implementing reset button that sets hero's healths to 100
