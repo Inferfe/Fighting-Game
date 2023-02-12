@@ -43,8 +43,8 @@ class Player{
 }
 //creating players own objects
 
-const player1=new Player('Kemal',100)
-const player2= new Player('Alena',100)
+const player1=new Player('Player1',100)
+const player2= new Player('Player2',100)
 // showing heroes' health on the screen
 const setHealths=()=>{
 player1HealthText.textContent=player1.health
